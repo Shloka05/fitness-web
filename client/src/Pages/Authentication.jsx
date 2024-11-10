@@ -3,6 +3,8 @@ import { useState } from "react";
 import styled from 'styled-components'
 import LogoImage from '../utils/images/Logo.png';
 import AuthImage from '../utils/images/AuthImage.jpg'
+import SignIn from '../components/SignIn';
+import SignUp from '../components/SignUp';
 const Container = styled.div`
     flex: 1;
     height: 100%;

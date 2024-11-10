@@ -1,9 +1,11 @@
 import React from 'react'
 import styled from 'styled-components';
+import { useState } from 'react';
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import {lightTheme} from './utils/Themes';
 import {ThemeProvider} from 'styled-components';
 import Authentication from './Pages/Authentication';
+import Navbar from './components/Navbar';
 const Container = styled.div`
   width: 100%;
   height: 100vh;
@@ -23,13 +25,21 @@ const Button = styled.button`
   border-radius: 5px;
 `;
 export default function App() {
+  const[user, setUser] = useState(true);
   return (
     <ThemeProvider theme={lightTheme}>
       <BrowserRouter>
-      <Container>Hi
+       {user? (
+        <Container>
+          <Navbar/>
+        </Container>
+       ):(
+        <Container>
         <Authentication/>
       </Container>
-      <Button primary>Style</Button>
+       )}
+      
+      
       </BrowserRouter>
     </ThemeProvider>
   )
